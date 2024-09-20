@@ -5,7 +5,7 @@
                 <div class="offer_time" style="background: url({{asset('frontend/images/flash_sell_bg.jpg')}})">
                     <div class="wsus__flash_coundown">
                         <span class=" end_text">Flash sale</span>
-                        <div class="simply-countdown simply-countdown-one"></div>
+                        {{-- <div class="simply-countdown simply-countdown-one"></div> --}}
                         <a class="common_btn" href="{{ route('flash-sale') }}">see more <i class="fas fa-caret-right"></i></a>
                     </div>
                 </div>
@@ -73,9 +73,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="path/to/simplyCountdown.js"></script>
 
-<div class="simply-countdown-one"></div>
+{{-- <div class="simply-countdown-one"></div> --}}
 @push('scripts')
-<script>
+{{-- <script>
     $(document).ready(function() {
         @if(isset($flashSaleDate) && isset($flashSaleDate->end_date))
             var countdownDate = {
@@ -89,7 +89,7 @@
             console.error('Flash sale date is not defined.');
         @endif
     });
-</script>
+</script> --}}
 @endpush
 
 
