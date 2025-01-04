@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4>offer detaila</h4>
+                        <h4>Offer Details</h4>
                         <ul>
                             <li><a href="#">daily deals</a></li>
                             <li><a href="#">offer details</a></li>
@@ -56,17 +56,7 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="wsus__section_header rounded-0">
-                            <h3>flash sell</h3>
-                            <div class="wsus__offer_countdown">
-                                <span class="end_text">ends time :</span>
-                                <div class="simply-countdown simply-countdown-one"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div class="row">
                     @foreach ($flashSaleItems as $item)
@@ -82,7 +72,7 @@
                             <span class="wsus__minus">{{ calculateDiscountPercent($product->price,$product->offer_price) }}%</span>
                             @endif
                             <a class="wsus__pro_link" href="product_details.html">
-                                <img src="{{asset('frontend/images/pro3.jpg')}}" alt="product" class="img-fluid w-100 img_1" />
+                                <img src="{{asset($product->thumb_image)}}" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="
                                 @if(isset($product->productImageGalleries[0]->image))
                                    {{ asset($product->productImageGalleries[0]->image) }}

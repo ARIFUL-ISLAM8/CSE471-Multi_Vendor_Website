@@ -5,7 +5,7 @@
                 <div class="offer_time" style="background: url({{asset('frontend/images/flash_sell_bg.jpg')}})">
                     <div class="wsus__flash_coundown">
                         <span class=" end_text">Flash sale</span>
-                        {{-- <div class="simply-countdown simply-countdown-one"></div> --}}
+                        <div class="simply-countdown simply-countdown-one"></div> 
                         <a class="common_btn" href="{{ route('flash-sale') }}">see more <i class="fas fa-caret-right"></i></a>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                     @if(checkDiscount($product))
                     <span class="wsus__minus">{{ calculateDiscountPercent($product->price,$product->offer_price) }}%</span>
                     @endif
-                    <a class="wsus__pro_link" href="product_details.html">
+                    <a class="wsus__pro_link" href="{{ route('product-detail', $product->slug) }}">
                         <img src="{{asset($product->thumb_image)}}" alt="product" class="img-fluid w-100 img_1" />
                         <img src="
                         @if(isset($product->productImageGalleries[0]->image))
@@ -50,7 +50,7 @@
                             <i class="fas fa-star-half-alt"></i>
                             <span>(No Reviews)</span>
                         </p>
-                        <a class="wsus__pro_name" href="#">{{ $product->name }}</a>
+                        <a class="wsus__pro_name" href="{{ route('product-detail', $product->slug) }}">{{ $product->name }}</a>
                         @if(checkDiscount($product))
 
                             <p class="wsus__price">${{ $product->offer_price }}<del>${{ $product->price }}</del></p>
@@ -74,8 +74,8 @@
 <script src="path/to/simplyCountdown.js"></script>
 
 {{-- <div class="simply-countdown-one"></div> --}}
-@push('scripts')
-{{-- <script>
+
+<script>
     $(document).ready(function() {
         @if(isset($flashSaleDate) && isset($flashSaleDate->end_date))
             var countdownDate = {
@@ -89,7 +89,7 @@
             console.error('Flash sale date is not defined.');
         @endif
     });
-</script> --}}
-@endpush
+</script> 
+
 
 

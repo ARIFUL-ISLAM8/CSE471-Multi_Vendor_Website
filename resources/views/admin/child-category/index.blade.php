@@ -42,7 +42,7 @@
            
            $.ajax({
               url: "{{ route('admin.child-category.change-status') }}",
-              method: 'PUT',
+              method: 'PUT',l
               data: {
                 status: isChecked,
                 id: id
